@@ -12,7 +12,6 @@ def get_user_list():
 
 def set_user_status(user, text, emoji):
     url = 'https://slack.com/api/users.profile.set?token=' + BOT_TOKEN
-    print(url)
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     payload = {'user': str(user),
                'profile': {
@@ -23,7 +22,6 @@ def set_user_status(user, text, emoji):
                }
 
     r = requests.get(url=url, params=payload, headers=headers)
-    print(r.url)
     return r.json()
 
 
